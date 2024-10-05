@@ -1,0 +1,2 @@
+1.gray=#F2F2F2
+2.soft-blue =#A6DCE6(primary)
