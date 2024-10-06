@@ -47,10 +47,10 @@ const Home = () => {
               Explore Blogs
             </Link>
             <Link
-              to=""
+              to="signin"
               className="bg-transparent hover:bg-[#A6DCE6] text-gray-800 border border-[#A6DCE6] hover:text-white py-3 px-6 rounded-full font-semibold transition-colors duration-300"
             >
-              Sign-in
+              Register
             </Link>
           </div>
         </div>

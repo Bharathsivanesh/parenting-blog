@@ -26,10 +26,10 @@ const Navbar = () => {
 
       {visible && (
         <div className="fixed inset-0   z-10 flex justify-center items-center min-h-screen bg-opacity-80 bg-gray-900">
-          <form className="w-2/5 h-96 p-10 flex flex-col justify-center items-center bg-white rounded-lg shadow-lg space-y-4 relative z-50">
+          <form className="md:w-2/5  w-3/4 h-96 p-10 flex flex-col justify-center items-center bg-white rounded-lg shadow-lg space-y-4 relative z-50">
             <div className="absolute top-4 right-4">
               <CircleX
-                className="w-8 h-8 text-red-600 cursor-pointer"
+                className="w-8 h-8 text-[#A6DCE6] cursor-pointer"
                 onClick={() => {
                   setvisible(false);
                 }}
@@ -41,7 +41,7 @@ const Navbar = () => {
             </h1>
             <input
               type="text"
-              placeholder="Enter Name"
+              placeholder="Enter I'd"
               className="w-full p-2 text-gray-700 border border-gray-300 rounded focus:outline-none focus:ring-4 focus:ring-[#A6DCE6]"
             />
             <input
@@ -60,6 +60,9 @@ const Navbar = () => {
             >
               Cancel
             </button>
+            <Link to="signin" className="text-[#A6DCE6]">
+              Dont't have an account ?
+            </Link>
           </form>
         </div>
       )}
