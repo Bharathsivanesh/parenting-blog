@@ -9,7 +9,7 @@ const Navbar = () => {
     <>
       <div className="w-full h-16 bg-[#A6DCE6] flex flex-row justify-evenly z-10 relative">
         <div className="w-[50%] text-white font-black italic text-2xl flex justify-center items-center h-full ">
-          <h2>Parents Blogs</h2>
+          <h2 className="mt-5">Parent Blogs</h2>
         </div>
         <div className="flex justify-evenly flex-row mt-8 w-1/2 italic text-white font-bold">
           <Link to="/">HOME</Link>
