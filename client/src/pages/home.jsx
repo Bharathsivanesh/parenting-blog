@@ -1,5 +1,6 @@
 import Navbar from "../components/navbar";
 import homebg from "../assets/images/homebg.png";
+import Footerbar from "../components/footerbar";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -50,6 +51,7 @@ const Home = () => {
           </p>
         </div>
       </section>
+      <Footerbar />
     </>
   );
 };
