@@ -1,10 +1,13 @@
 import Navbar from "../components/navbar";
 import homebg from "../assets/images/homebg.png";
+import Footerbar from "../components/footerbar";
 import homecard1 from "../assets/images/homecard1.png";
 import homecard2 from "../assets/images/homecard2.png";
 import homecard3 from "../assets/images/homecard3.png";
+
 import { Link } from "react-router-dom";
 import Footer from "../components/footer";
+import FooterBar from "../components/footerbar";
 
 const Home = () => {
   const cards = [
@@ -89,7 +92,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <Footer />
+      <FooterBar />
     </>
   );
 };
