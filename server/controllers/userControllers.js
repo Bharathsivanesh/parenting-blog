@@ -15,7 +15,7 @@ exports.createUser = async(req,res) => {
 
 exports.getUser = async(req,res) => {
     try {
-        const user = await userModel.find({email:req.params.email})
+        const user = await userModel.find({email:req.params.email,password:req.params.password})
         res.json({
             user
         })

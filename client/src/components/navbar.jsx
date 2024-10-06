@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { CircleUser, CircleX } from "lucide-react";
+import { getUser } from "../services/api";
 
 const Navbar = () => {
   const [visible, setvisible] = useState(false);
+  const emailRef = useRef(null)
+  const passwordRef = useRef(null)
+const validateUser = () => {
+  const user = getUser(emailRef.current.value,passwordRef.current.value)
+  alert(user)
+}
 
   return (
     <>
@@ -42,14 +49,16 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Enter I'd"
+              ref={emailRef}
               className="w-full p-2 text-gray-700 border border-gray-300 rounded focus:outline-none focus:ring-4 focus:ring-[#A6DCE6]"
             />
             <input
               type="password"
               placeholder="Enter Password"
+              ref={passwordRef}
               className="w-full p-2 text-gray-700 border border-gray-300 rounded focus:outline-none focus:ring-4 focus:ring-[#A6DCE6]"
             />
-            <button className="w-full bg-[#A6DCE6] text-white py-2 rounded hover:bg-[#A6DCE6] transition duration-300">
+            <button className="w-full bg-[#A6DCE6] text-white py-2 rounded hover:bg-[#A6DCE6] transition duration-300" onClick={validateUser}>
               Submit
             </button>
             <button
