@@ -3,71 +3,22 @@ import { LinkedinIcon, Mail, PhoneCall } from "lucide-react";
 const FooterBar = () => {
   return (
     <>
-      <div className="w-full h-auto bg-[#A6DCE6]  flex items-start justify-evenly text-white p-8">
-        <div className="flex flex-col space-y-4">
-          <h4 className="font-bold text-lg">Company</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="" className="hover:underline">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:underline">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:underline">
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:underline">
-                FAQs
-              </a>
-            </li>
-          </ul>
+      <div className="w-full bg-[#A6DCE6] h-24 flex items-center justify-center flex-col shadow-lg">
+        <div>
+          <h2 className="text-2xl text-white font-black">Contact Us</h2>
         </div>
-
-        <div className="flex flex-col space-y-4">
-          <h4 className="font-bold text-lg">Get Help</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <a href="" className="hover:underline">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:underline">
-                Terms and Conditions
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:underline">
-                Cookie Policy
-              </a>
-            </li>
-            <li>
-              <a href="" className="hover:underline">
-                Disclaimer
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col space-y-4">
-          <h4 className="font-bold text-lg">Contact Us</h4>
-          <div className="flex space-x-4">
-            <a href="" className="hover:text-gray-400">
-              <Mail size={24} />
-            </a>
-            <a href="" className="hover:text-gray-400">
-              <LinkedinIcon size={24} />
-            </a>
-            <a href="tel:" className="hover:text-gray-400">
-              <PhoneCall size={24} />
-            </a>
+        <div className="flex flex-row mt-4 text-white justify-evenly w-full">
+          <div className="flex flex-col items-center">
+            <LinkedinIcon className="w-8 h-8 hover:text-[#0056b3] transition-colors duration-300" />
+            <span className="text-sm mt-1">LinkedIn</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <Mail className="w-8 h-8 hover:text-[#f39c12] transition-colors duration-300" />
+            <span className="text-sm mt-1">Email</span>
+          </div>
+          <div className="flex flex-col items-center">
+            <PhoneCall className="w-8 h-8 hover:text-[#e74c3c] transition-colors duration-300" />
+            <span className="text-sm mt-1">Phone</span>
           </div>
         </div>
       </div>
