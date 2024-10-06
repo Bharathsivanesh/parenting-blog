@@ -79,7 +79,7 @@ const Home = () => {
         <div className="flex flex-row flex-wrap gap-10 mt-10 mb-10 ">
           {cards.map((data) => (
             <div
-              className="w-96  bg-gray-100 p-5 h-full shadow-gray-600 transition-transform   duration-500 hover:shadow-2xl  hover:scale-105   shadow-xl "
+              className="w-96  bg-gray-100 p-5 h-full shadow-gray-600 transition-transform   duration-500 hover:shadow-2xl  hover:scale-105   shadow-sm "
               key={data.title}
             >
               <img src={data.img} alt="" className="w-full h-52" />
