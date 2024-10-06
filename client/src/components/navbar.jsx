@@ -61,7 +61,7 @@ const Navbar = () => {
               Cancel
             </button>
             <Link to="signin" className="text-[#A6DCE6]">
-              Dont't have an account ?
+              Dont&apos;t have an account ?
             </Link>
           </form>
         </div>

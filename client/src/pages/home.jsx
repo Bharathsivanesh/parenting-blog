@@ -1,12 +1,9 @@
 import Navbar from "../components/navbar";
 import homebg from "../assets/images/homebg.png";
-import Footerbar from "../components/footerbar";
 import homecard1 from "../assets/images/homecard1.png";
 import homecard2 from "../assets/images/homecard2.png";
 import homecard3 from "../assets/images/homecard3.png";
-
 import { Link } from "react-router-dom";
-import Footer from "../components/footer";
 import FooterBar from "../components/footerbar";
 
 const Home = () => {
@@ -82,7 +79,7 @@ const Home = () => {
         <div className="flex flex-row flex-wrap gap-10 mt-10 mb-10 ">
           {cards.map((data) => (
             <div
-              className="w-96  bg-gray-100 p-5 h-full shadow-gray-600 transition-transform   duration-500 hover:shadow-2xl  hover:scale-105   shadow-xl "
+              className="w-96  bg-gray-100 p-5 h-full shadow-gray-600 transition-transform   duration-500 hover:shadow-2xl  hover:scale-105   shadow-sm "
               key={data.title}
             >
               <img src={data.img} alt="" className="w-full h-52" />
