@@ -7,7 +7,7 @@ const FooterBar = () => {
         <div>
           <h2 className="text-2xl text-white font-black">Contact Us</h2>
         </div>
-        <div className="flex flex-row mt-4 text-white justify-evenly w-full mt-8">
+        <div className="flex flex-row mt-4 text-white justify-evenly w-full">
           <div className="flex flex-col items-center">
             <LinkedinIcon className="w-8 h-8 hover:text-[#0056b3] transition-colors duration-300" />
             <span className="text-sm mt-1">LinkedIn</span>
