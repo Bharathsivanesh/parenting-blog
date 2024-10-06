@@ -1,5 +1,6 @@
 import { useState } from "react";
 import signin from "../assets/images/signin.jpg";
+import { createUser } from "../services/api";
 
 const Signin = () => {
   const [name, setname] = useState("");
@@ -18,7 +19,7 @@ const Signin = () => {
     }
 
     if (!emailRegex.test(mail)) {
-      seterror("Please enter a valid email address.");
+      seterror("Please enter a valid email address");
       return;
     }
 
@@ -27,6 +28,15 @@ const Signin = () => {
       return;
     }
     seterror("");
+    const userData = {
+      "name":name,
+      "email":mail,
+      "password":password
+    }
+    createUser(userData)
+    setname("")
+    setmail("")
+    setpassword("")
   };
 
   return (
