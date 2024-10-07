@@ -16,11 +16,7 @@ exports.createUser = async (req, res) => {
 exports.getUser = async (req, res) => {
   try {
     const { email, password } = req.params;
-
-    // Find the user with the provided email and password
     const user = await userModel.find({ email, password });
-
-    // If user exists, send the user details
     if (user.length > 0) {
       res.json({ user });
     } else {
@@ -30,17 +26,3 @@ exports.getUser = async (req, res) => {
     res.status(500).json({ message: "Error fetching user", error });
   }
 };
-
-// exports.getUser = async (req, res) => {
-//   try {
-//     const user = await userModel.find({
-//       email: req.params.email,
-//       password: req.params.password,
-//     });
-//     res.json({
-//       user,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };

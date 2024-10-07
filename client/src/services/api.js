@@ -10,4 +10,8 @@ const getUser = (email, password) => {
   return axios.get(`${API}/user/${email}/${password}`);
 };
 
-export { createUser, getUser };
+const createblog = (userblog) => {
+  axios.post(`${API}/userblog`, userblog);
+};
+
+export { createUser, getUser, createblog };
