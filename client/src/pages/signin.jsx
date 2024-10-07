@@ -37,6 +37,7 @@ const Signin = () => {
     setname("")
     setmail("")
     setpassword("")
+    
   };
 
   return (
