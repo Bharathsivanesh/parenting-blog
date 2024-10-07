@@ -1,12 +1,17 @@
 import { useState } from "react";
 import signin from "../assets/images/signin.jpg";
 import { createUser } from "../services/api";
+import { useNavigate } from "react-router-dom";
+
 
 const Signin = () => {
   const [name, setname] = useState("");
   const [mail, setmail] = useState("");
   const [password, setpassword] = useState("");
   const [error, seterror] = useState("");
+  const [success, setsuccess] = useState(false);
+  const navigate = useNavigate();
+
 
   const validatedata = (e) => {
     e.preventDefault();
@@ -37,8 +42,15 @@ const Signin = () => {
     setname("")
     setmail("")
     setpassword("")
-    
+    setsuccess(true);
   };
+
+  const closesuccess = () => {
+    setsuccess(false);
+  }
+  const jumphome = () => {
+    navigate("/");
+  }
 
   return (
     <>
@@ -95,7 +107,7 @@ const Signin = () => {
 
             <button
               onClick={validatedata}
-              className="mt-6 w-full py-3 bg-[#A6DCE6] text-white font-bold text-lg rounded-lg hover:bg-[#5C8C8F] transition-colors duration-300"
+              className="mt-6 w-full py-3 bg-[#a6dce6] text-white font-bold text-lg rounded-lg hover:bg-[#5C8C8F] transition-colors duration-300"
             >
               Register
             </button>
@@ -103,6 +115,27 @@ const Signin = () => {
           </div>
         </div>
       </div>
+
+      {success && (
+            <div className="h-full w-full fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 ">
+              <div className="bg-white p-6 m-w-sm flex-col text-center rounded-lg justify-center w-40vw space-y-10">
+                <h3 className="text-2xl font-sans font-semibold text-black ">Registration Successful</h3>
+                <p className="text-gray-700 mb-6">Your account has been successfully Registered</p>
+                <div className="h-full w-full gap-5 flex items-center justify-center">
+                <button className="bg-[#a6dce6] font-semibold text-white px-4 py-2 rounded-lg hover:bg-[#35d0ec] transition duration-300"
+                  onClick = {jumphome}
+                >
+                    Login
+                </button>
+                <button className="bg-red-400 font-semibold text-white px-4 py-2 rounded-lg hover:bg-red-500 transition duration-300"
+                  onClick={closesuccess}
+                >
+                    Close
+                </button>
+              </div>
+              </div>
+            </div>
+      )}
     </>
   );
 };

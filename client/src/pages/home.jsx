@@ -71,7 +71,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <div className="flex flex-col ml-14 md:ml-0 md:items-center">
+      <div className="flex flex-col justify-center items-center">
         <h1 className="text-center font-bold text-3xl text-[#A6DCE6] mt-3">
           {" "}
           Topics You Can Learn From

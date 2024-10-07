@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "lucide-react": "^0.447.0"
+    "lucide-react": "^0.447.0",
+    "react-axios": "^2.0.6"
   }
 }
