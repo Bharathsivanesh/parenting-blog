@@ -41,7 +41,7 @@ const Home = () => {
           </p>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <Link
-              href="#read-more"
+              to="blogs"
               className="bg-[#A6DCE6] hover:bg-[#5C8C8F] text-white py-3 px-6 rounded-full font-semibold transition-colors duration-300"
             >
               Explore Blogs

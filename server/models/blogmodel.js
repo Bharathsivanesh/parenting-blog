@@ -13,6 +13,10 @@ const userblogschema = new mongoose.Schema({
     required: true,
     type: String,
   },
+  image:{
+    required:true,
+    type:String
+  }
 });
 const blogmodel = mongoose.model("userblog", userblogschema);
 module.exports = blogmodel;

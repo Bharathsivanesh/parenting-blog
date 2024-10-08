@@ -14,4 +14,12 @@ const createblog = (userblog) => {
   axios.post(`${API}/userblog`, userblog);
 };
 
-export { createUser, getUser, createblog };
+const getUserBlogs = () => {
+  return axios.get(`${API}/userblog`);
+};
+
+const getuserblogs = (email) => {
+  return axios.get(`${API}/userblog/${email}`);
+};
+
+export { createUser, getUser, createblog, getUserBlogs, getuserblogs };

@@ -2,17 +2,20 @@ import { useLocation, useNavigate } from "react-router-dom";
 import bgimg from "../assets/images/parentuser.jpg";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createblog } from "../services/api";
+import { getuserblogs } from "../services/api";
 const Userpage = () => {
   const location = useLocation();
   const navigation = useNavigate();
+
   const [texteditor, settexteditor] = useState(false);
   const { name, email } = location.state;
   const capname = name.charAt(0).toUpperCase() + name.slice(1);
-
+  const [blogs, setBlogs] = useState([]);
   const [title, settitle] = useState("");
   const [content, setcontent] = useState("");
+  const [image, setImage] = useState("");
 
   const toolbarOptions = [
     [{ header: [1, 2, 3] }],
@@ -21,18 +24,46 @@ const Userpage = () => {
     ["clean"],
   ];
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+    }
+  };
+
   const validate = (e) => {
     e.preventDefault();
     const userblog = {
       title: title,
       content: content,
       mail: email,
+      image: image,
     };
     console.log(userblog);
     createblog(userblog);
     settitle("");
     setcontent("");
+    setImage("");
   };
+
+  const viewblogs = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await getuserblogs(email);
+      setBlogs(response.data.blogs);
+    } catch (error) {
+      console.log("Fetching error blogs:", error);
+    }
+  };
+
+  useEffect(() => {
+    viewblogs();
+  }, []);
+
   return (
     <>
       <div className="bg-[#A6DCE6] flex flex-row h-16 justify-around">
@@ -70,26 +101,35 @@ const Userpage = () => {
             empower you to make the best decisions for your family. Your
             parenting journey just got smoother and more fun!
           </p>
-          <button
-            onClick={() => {
-              settexteditor(true);
-            }}
-            className="font-bold text-white bg-[#A6DCE6] rounded-lg h-10 w-32 mt-8 flex items-center justify-center gap-2 hover:bg-red-600 transition duration-300"
-          >
-            Create
-            <span className="text-xl">+</span>
-          </button>
+          <div className="flex -flex-row gap-8">
+            <button
+              onClick={() => {
+                settexteditor(true);
+              }}
+              className="font-bold text-white bg-[#A6DCE6] rounded-lg h-10 w-32 mt-8 flex items-center justify-center gap-2 hover:bg-red-600 transition duration-300"
+            >
+              Create
+              <span className="text-xl">+</span>
+            </button>
+            <button
+              onClick={viewblogs}
+              className="font-bold text-white bg-red-600 rounded-lg h-10 w-32 mt-8 flex items-center justify-center gap-2 hover:bg-[#A6DCE6] transition duration-300"
+            >
+              My Blog's
+            </button>
+          </div>
         </div>
       </div>
 
       {texteditor && (
         <div className="fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-70 ">
-          <div className="bg-gray-100 p-6  rounded-lg md:w-1/2 w-full  ">
+          <div className="bg-gray-100 p-6  flex flex-col rounded-lg md:w-1/2 w-full  ">
             <h2 className="text-2xl font-bold mb-4 text-red-500 text-center">
               Create Your Post
             </h2>
             <input
               type="text"
+              value={title}
               onChange={(e) => {
                 settitle(e.target.value);
               }}
@@ -106,19 +146,42 @@ const Userpage = () => {
                 },
               }}
             />
+            <input type="file" onChange={handleImageChange} />
+            <div className="flex flex-row mt-3">
+              <button
+                onClick={validate}
+                className="bg-red-500  text-white rounded-lg h-10 w-24"
+              >
+                Submit
+              </button>
+              <button
+                onClick={() => settexteditor(false)}
+                className="bg-red-500 text-white ml-5 rounded-lg h-10 w-24"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
-            <button
-              onClick={validate}
-              className="bg-red-500  text-white rounded-lg h-10 w-24"
-            >
-              Submit
-            </button>
-            <button
-              onClick={() => settexteditor(false)}
-              className="bg-red-500 text-white ml-5 rounded-lg h-10 w-24"
-            >
-              Close
-            </button>
+      {blogs.length > 0 && (
+        <div className="p-6 bg-white">
+          <h2 className="text-3xl font-bold mb-6 text-center">Your Blogs</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {blogs.map((blog, index) => (
+              <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
+                <p className="mb-4">{blog.content}</p>
+                {blog.image && (
+                  <img
+                    src={blog.image}
+                    alt="Blog visual"
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                )}
+              </div>
+            ))}
           </div>
         </div>
       )}
