@@ -14,7 +14,7 @@ const Navbar = () => {
     e.preventDefault();
 
     try {
-      const response = await getUser( 
+      const response = await getUser(
         emailRef.current.value,
         passwordRef.current.value
       );

@@ -28,27 +28,27 @@ const Home = () => {
     <>
       <Navbar />
       <div
-        className="h-screen w-full mt-2 flex justify-center items-center bg-cover bg-center bg-no-repeat opacity-90"
+        className="h-screen w-screen mt-2 flex justify-center items-center p-5 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ backgroundImage: `url(${homebg})` }}
       >
-        <div className="flex justify-center items-center flex-col bg-white bg-opacity-80 w-4/5 md:w-1/2 rounded-lg p-8 shadow-lg">
-          <h1 className="text-4xl md:text-5xl text-gray-800 font-bold mb-4 text-center">
+        <div className="flex justify-center items-center flex-col bg-white bg-opacity-80 w-82 h-96  md:w-1/2 rounded-lg p-3 md:p-5 shadow-lg">
+          <h1 className="text-2xl md:text-5xl text-[#A6DCE6] font-bold mb-4 text-center">
             Welcome to Parenting Blog
           </h1>
           <p className="text-lg md:text-xl text-gray-700 italic mb-6 text-center">
             A place where parents can share experiences, tips, and insights to
             help each other raise happy and healthy families.
           </p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+          <div className="flex md:flex-row justify-center items-center gap-4">
             <Link
               to="blogs"
-              className="bg-[#A6DCE6] hover:bg-[#5C8C8F] text-white py-3 px-6 rounded-full font-semibold transition-colors duration-300"
+              className="bg-[#A6DCE6] hover:bg-[#5C8C8F] text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
             >
               Explore Blogs
             </Link>
             <Link
               to="signin"
-              className="bg-transparent hover:bg-[#A6DCE6] text-gray-800 border border-[#A6DCE6] hover:text-white py-3 px-6 rounded-full font-semibold transition-colors duration-300"
+              className="bg-transparent hover:bg-[#A6DCE6] text-gray-800 border border-[#A6DCE6] hover:text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
             >
               Register
             </Link>
@@ -56,7 +56,7 @@ const Home = () => {
         </div>
       </div>
 
-      <section id="about-us" className="py-12 px-4 bg-gray-100">
+      <section id="about-us" className="py-12 px-4 w-[100%] bg-gray-100">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#A6DCE6] mb-4">
             What is Parenting Blog About?
@@ -71,20 +71,24 @@ const Home = () => {
           </p>
         </div>
       </section>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center  items-center">
         <h1 className="text-center font-bold text-3xl text-[#A6DCE6] mt-3">
           {" "}
           Topics You Can Learn From
         </h1>
-        <div className="flex flex-row flex-wrap gap-10  mt-10 mb-10 ">
+        <div className="flex flex-row flex-wrap gap-10 p-10 mt-10 mb-10 ">
           {cards.map((data) => (
             <div
-              className="w-96   bg-gray-100 p-5 h-full shadow-gray-600 transition-transform   duration-500 hover:shadow-2xl  hover:scale-105   shadow-sm "
+              className="w-80  md:w-96   bg-gray-100 p-5 h-96 md:h-full shadow-gray-600 transition-transform   duration-500 hover:shadow-2xl  hover:scale-105   shadow-sm "
               key={data.title}
             >
-              <img src={data.img} alt="" className="w-full h-52" />
+              <img
+                src={data.img}
+                alt=""
+                className="w-72 md:w-full h-40 md:h-52"
+              />
               <h3 className="text-2xl font-bold mb-2">{data.title}</h3>
-              <p className="text-gray-700 mb-4">{data.desc}</p>
+              <p className="text-gray-700 mb-2">{data.desc}</p>
             </div>
           ))}
         </div>

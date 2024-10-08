@@ -171,8 +171,6 @@ const Userpage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {blogs.map((blog, index) => (
               <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
-                <p className="mb-4">{blog.content}</p>
                 {blog.image && (
                   <img
                     src={blog.image}
@@ -180,6 +178,8 @@ const Userpage = () => {
                     className="w-full h-48 object-cover rounded-lg"
                   />
                 )}
+                <h3 className="text-xl font-bold mb-2">{blog.title}</h3>
+                <p className="mb-4">{blog.content}</p>
               </div>
             ))}
           </div>
