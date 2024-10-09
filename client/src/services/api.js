@@ -22,4 +22,15 @@ const getuserblogs = (email) => {
   return axios.get(`${API}/userblog/${email}`);
 };
 
-export { createUser, getUser, createblog, getUserBlogs, getuserblogs };
+const deleteblog = (id) => {
+  return axios.delete(`${API}/userblog/${id}`);
+};
+
+export {
+  createUser,
+  getUser,
+  createblog,
+  getUserBlogs,
+  getuserblogs,
+  deleteblog,
+};

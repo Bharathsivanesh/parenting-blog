@@ -9,11 +9,16 @@ const FooterBar = () => {
         </div>
         <div className="flex flex-row mt-4 text-white justify-evenly w-full">
           <div className="flex flex-col items-center">
-            <LinkedinIcon className="w-8 h-8 hover:text-[#0056b3] transition-colors duration-300" />
+            <a href="https://www.linkedin.com/in/bharathsivanesh">
+              <LinkedinIcon className="w-8 h-8 hover:text-[#0056b3] transition-colors duration-300" />
+            </a>
+
             <span className="text-sm mt-1">LinkedIn</span>
           </div>
           <div className="flex flex-col items-center">
-            <Mail className="w-8 h-8 hover:text-[#f39c12] transition-colors duration-300" />
+            <a href="mailto:bharathsivanesh@gmail.com">
+              <Mail className="w-8 h-8 hover:text-[#f39c12] transition-colors duration-300" />
+            </a>
             <span className="text-sm mt-1">Email</span>
           </div>
           <div className="flex flex-col items-center">

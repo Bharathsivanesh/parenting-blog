@@ -35,3 +35,19 @@ exports.getuserblogs = async (req, res) => {
     res.status(500).json({ message: "Error fetching blogs", error });
   }
 };
+
+exports.deleteBlog = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedBlog = await blogmodel.findByIdAndDelete(id);
+
+    if (!deletedBlog) {
+      return res.status(404).json({ message: "Blog not found" });
+    }
+
+    res.json({ message: "Blog deleted successfully", deletedBlog });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error deleting blog", error });
+  }
+};

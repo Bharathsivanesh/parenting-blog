@@ -3,6 +3,7 @@ import Home from "./pages/home";
 import Signin from "./pages/signin";
 import Userpage from "./pages/userpage";
 import Blogs from "./pages/blogs";
+import AboutUs from "./pages/aboutus";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path="/signin" element={<Signin />} />
           <Route path="/userpage" element={<Userpage />} />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -25,14 +25,14 @@ const Home = () => {
     },
   ];
   return (
-    <>
+    <div className="m-0 p-0 h-screen w-screen overflow-x-hidden">
       <Navbar />
       <div
         className="h-screen w-screen mt-2 flex justify-center items-center p-5 bg-cover bg-center bg-no-repeat opacity-90"
         style={{ backgroundImage: `url(${homebg})` }}
       >
-        <div className="flex justify-center items-center flex-col bg-white bg-opacity-80 w-82 h-96  md:w-1/2 rounded-lg p-3 md:p-5 shadow-lg">
-          <h1 className="text-2xl md:text-5xl text-[#A6DCE6] font-bold mb-4 text-center">
+        <div className="flex justify-center items-center flex-col bg-white bg-opacity-80 w-82 h-72  md:w-1/2 rounded-lg p-3 md:p-5 shadow-lg">
+          <h1 className="text-2xl md:text-4xl text-[#A6DCE6] font-bold mb-4 text-center">
             Welcome to Parenting Blog
           </h1>
           <p className="text-lg md:text-xl text-gray-700 italic mb-6 text-center">
@@ -94,7 +94,7 @@ const Home = () => {
         </div>
       </div>
       <FooterBar />
-    </>
+    </div>
   );
 };
 
