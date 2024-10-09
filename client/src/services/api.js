@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:3000/parental-blog/";
+const API = "https://parenting-blog.onrender.com/parental-blog";
 
 const createUser = (userData) => {
   axios.post(`${API}/user`, userData);
