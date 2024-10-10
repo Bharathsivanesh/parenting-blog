@@ -6,7 +6,14 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 dotenv.config({ path: path.join(__dirname, "config", "config.env") });
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "https://parenting-blog-9pzt.vercel.app",
+    methods: ["GET", "POST", "DELETE"],
+    credentials: true,
+  })
+);
 connectDB();
 
 app.use(express.json({ limit: "10mb" }));
