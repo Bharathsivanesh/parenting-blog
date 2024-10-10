@@ -279,7 +279,7 @@ const Userpage = () => {
               <img
                 src={selectblog.image}
                 alt={selectblog.title}
-                className="w-full h-96 object-cover mb-4 rounded-md"
+                className="md:w-full h-56 md:h-96 w-[100%]  object-cover mb-4 rounded-md"
               />
             )}
             <div
