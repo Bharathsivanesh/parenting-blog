@@ -71,7 +71,7 @@ const Blogs = () => {
 
       {showblog && selectblog && (
         <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white w-2/3 p-6 rounded-lg shadow-lg    md:h-[90vh] overflow-y-auto">
+          <div className="bg-white w-full md:w-2/3 p-6 rounded-lg shadow-lg   max-h-full md:h-[90vh]  overflow-y-auto">
             <h2 className="text-2xl font-bold mb-4">{selectblog.title}</h2>
             {selectblog.image && (
               <img
