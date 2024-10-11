@@ -36,12 +36,12 @@ const Navbar = () => {
   return (
     <>
       <div className="w-screen h-16 bg-[#A6DCE6] flex flex-row justify-evenly z-10 relative">
-        <div className="w-[50%] text-white font-black italic text-2xl flex justify-center items-center h-full ">
-          <h2 className="mt-5">Parent Blogs</h2>
+        <div className="md:w-[50%] w-[35%] text-white font-black italic text-2xl flex justify-center items-center h-full ">
+          <h2 className=" text-xl mt-5">Parent Blogs</h2>
         </div>
-        <div className="flex justify-evenly flex-row mt-8 w-1/2 italic text-white font-bold">
+        <div className="flex justify-evenly flex-row mt-8 gap-2   w-1/2 italic text-white font-bold">
           <Link to="/">HOME</Link>
-          <Link to="/aboutus">ABOUT-US</Link>
+          <Link to="/admin">ADMIN</Link>
           <h2
             onClick={() => {
               setvisible(true);

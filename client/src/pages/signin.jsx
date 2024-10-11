@@ -56,13 +56,13 @@ const Signin = () => {
         <div className="w-[50%] hidden md:block ">
           <img src={signin} alt="Signin" className="w-full h-full " />
         </div>
-        <div className="w-full md:w-[50%] flex justify-center items-center bg-white">
-          <div className="flex flex-col items-center p-10 rounded-lg shadow-lg w-2/3 md:w-4/5 lg:w-3/5 bg-white">
+        <div className="w-full md:w-[50%] flex  justify-center items-center bg-white">
+          <div className="flex flex-col items-center p-10 rounded-lg shadow-lg  md:w-[60%] bg-white">
             <h2 className="text-[#A6DCE6] italic text-4xl font-bold mb-8">
               WELCOME!
             </h2>
 
-            <div className="w-full">
+            <div className="md:w-full w-[60vw]">
               <label className="block text-lg font-semibold text-gray-700 mb-2">
                 Name
               </label>

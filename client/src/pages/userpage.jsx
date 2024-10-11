@@ -248,8 +248,8 @@ const Userpage = () => {
         )
       )}
       {showconfirmation && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white w-[30vw] h-52 ">
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 p-5 md:p-0 flex justify-center items-center">
+          <div className="bg-white w-full md:w-[30vw] h-52 ">
             <p
               className="text-end p-3 font-black text-red-500 cursor-pointer"
               onClick={() => {
@@ -262,7 +262,7 @@ const Userpage = () => {
               <p className="font-bold">Click Confirm To Delete</p>
               <button
                 onClick={handledeleteblog}
-                className="mt-5 bg-red-500 px-3 rounded text-white"
+                className="mt-5 bg-red-500 px-5 py-2   rounded text-white"
               >
                 Confirm
               </button>
