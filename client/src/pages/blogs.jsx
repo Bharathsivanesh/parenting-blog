@@ -32,8 +32,8 @@ const Blogs = () => {
 
   return (
     <div className="h-screen w-full">
-      <div className="w-full h-16 bg-[#A6DCE6]">
-        <h1 className="text-white font-black text-center text-2xl">
+      <div className="w-full h-16 flex items-center justify-center bg-[#A6DCE6] ">
+        <h1 className="text-white font-black  text-center text-2xl">
           Blog&apos;s View
         </h1>
       </div>
@@ -63,8 +63,8 @@ const Blogs = () => {
             </div>
           ))
         ) : (
-          <div className="w-1/2 h-full">
-            <img src={nodataimg} alt="" />
+          <div className="h-96  w-96">
+            <img src={nodataimg} alt="" className="h-full w-full" />
           </div>
         )}
       </div>

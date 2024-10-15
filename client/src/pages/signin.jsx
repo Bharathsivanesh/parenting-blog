@@ -54,7 +54,7 @@ const Signin = () => {
     <>
       <div className="w-full h-screen flex flex-row">
         <div className="w-[50%] hidden md:block ">
-          <img src={signin} alt="Signin" className="w-full h-full " />
+          <img src={signin} alt="Signin" className="w-[80%] ml-32 h-full " />
         </div>
         <div className="w-full md:w-[50%] flex  justify-center items-center bg-white">
           <div className="flex flex-col items-center p-10 rounded-lg shadow-lg  md:w-[60%] bg-white">
