@@ -5,6 +5,7 @@ import Userpage from "./pages/userpage";
 import Blogs from "./pages/blogs";
 
 import Admin from "./pages/admin";
+import Adminpage from "./pages/adminpage";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/userpage" element={<Userpage />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/adminpage" element={<Adminpage />} />
         </Routes>
       </BrowserRouter>
     </>

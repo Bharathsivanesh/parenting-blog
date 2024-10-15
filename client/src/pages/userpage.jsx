@@ -198,8 +198,10 @@ const Userpage = () => {
       )}
 
       {blogsFetched && blogs.length === 0 ? (
-        <div className="flex ml-auto w-full h-full flex-row justify-center items-center">
-          <h1 className="text-3xl text-red-500">Oops! No post yet</h1>
+        <div className="flex md:ml-auto md:w-full md:h-full  md:flex-row flex-col">
+          <h1 className="text-3xl text-red-500 md:w-[30%]">
+            Oops! No post yet
+          </h1>
           <img src={nopost} alt="No posts" className="w-82 h-96" />
         </div>
       ) : (
