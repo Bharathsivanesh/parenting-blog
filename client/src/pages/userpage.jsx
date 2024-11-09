@@ -96,7 +96,7 @@ const Userpage = () => {
     <div className="m-0 p-0 h-screen w-screen overflow-x-hidden">
       <div className="bg-[#A6DCE6] w-full flex flex-row h-18  justify-around">
         <div className="md:w-1/2 w-96">
-          <h1 className="font-serif    text-white mt-3 text-xl md:text-2xl  md:font-black mt-3">
+          <h1 className="font-serif    text-white text-xl md:text-2xl  md:font-black mt-3">
             Parenting Blog's
           </h1>
         </div>
